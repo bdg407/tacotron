@@ -1,7 +1,14 @@
-# Tacotron
+# Tacotron GLaDOS
 
 An implementation of Tacotron speech synthesis in TensorFlow.
 
+Add preprocessing code for glados voice dataset from 'https://glados.biringa.com'
+
+121824 *.wav files
+Wrote 121830 utterances, 32323937 frames (112.24 hours)
+Max input length: 263
+Max output length: 4051
+Need 140GB for storing preprocessed data
 
 ### Audio Samples
 

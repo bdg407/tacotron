@@ -50,20 +50,24 @@ def _process_utterance(out_dir, index, wav_path, text):
   '''
 
   # Load the audio to a numpy array:
-  wav = audio.load_wav(wav_path)
+  try:
+    wav = audio.load_wav(wav_path)
 
-  # Compute the linear-scale spectrogram from the wav:
-  spectrogram = audio.spectrogram(wav).astype(np.float32)
-  n_frames = spectrogram.shape[1]
+    # Compute the linear-scale spectrogram from the wav:
+    spectrogram = audio.spectrogram(wav).astype(np.float32)
+    n_frames = spectrogram.shape[1]
 
-  # Compute a mel-scale spectrogram from the wav:
-  mel_spectrogram = audio.melspectrogram(wav).astype(np.float32)
+    # Compute a mel-scale spectrogram from the wav:
+    mel_spectrogram = audio.melspectrogram(wav).astype(np.float32)
 
-  # Write the spectrograms to disk:
-  spectrogram_filename = 'glados-spec-%05d.npy' % index
-  mel_filename = 'glados-mel-%05d.npy' % index
-  np.save(os.path.join(out_dir, spectrogram_filename), spectrogram.T, allow_pickle=False)
-  np.save(os.path.join(out_dir, mel_filename), mel_spectrogram.T, allow_pickle=False)
+    # Write the spectrograms to disk:
+    spectrogram_filename = 'glados-spec-%05d.npy' % index
+    mel_filename = 'glados-mel-%05d.npy' % index
+    np.save(os.path.join(out_dir, spectrogram_filename), spectrogram.T, allow_pickle=False)
+    np.save(os.path.join(out_dir, mel_filename), mel_spectrogram.T, allow_pickle=False)
 
-  # Return a tuple describing this training example:
-  return (spectrogram_filename, mel_filename, n_frames, text)
+    # Return a tuple describing this training example:
+    return (spectrogram_filename, mel_filename, n_frames, text)
+  except:
+    print(wav_path)
+    return (False, False, 0, '')

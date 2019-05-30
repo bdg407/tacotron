@@ -32,7 +32,8 @@ def preprocess_glados(args):
 def write_metadata(metadata, out_dir):
   with open(os.path.join(out_dir, 'train.txt'), 'w', encoding='utf-8') as f:
     for m in metadata:
-      f.write('|'.join([str(x) for x in m]) + '\n')
+      if m[0] is not False:
+        f.write('|'.join([str(x) for x in m]) + '\n')
   frames = sum([m[2] for m in metadata])
   hours = frames * hparams.frame_shift_ms / (3600 * 1000)
   print('Wrote %d utterances, %d frames (%.2f hours)' % (len(metadata), frames, hours))
