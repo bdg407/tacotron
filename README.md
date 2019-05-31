@@ -2,7 +2,7 @@
 
 Portal GLaDOS voice generator.
 
-Add preprocessing code for glados voice dataset from 'https://glados.biringa.com'
+Add preprocessing code for glados voice dataset from https://glados.biringa.com
 
 ### Download Pretrained Model
 
@@ -21,10 +21,14 @@ Input: bring it on you son of a... no wait... where are you going with that piec
 ### About GLaDOS Dataset
 
 121824 *.wav files (about 35.8GB)
+
 Wrote 121830 utterances, 32323937 frames (112.24 hours)
+
 Max input length: 263
+
 Max output length: 4051
-Need 140GB for storing preprocessed data
+
+Need 140GB disk space for storing preprocessed data
 
 ### Scrape Voice Data from Website
 
@@ -45,6 +49,12 @@ python preprocess.py --dataset glados
 
 ```
 python train.py
+```
+
+### Test
+
+```
+python demo_server.py --checkpoint logs-tacotron/model.ckpt-200000
 ```
 
 ## Original Tacotron Documentation
