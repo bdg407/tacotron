@@ -4,9 +4,9 @@ Portal GLaDOS voice generator.
 
 Add preprocessing code for glados voice dataset from 'https://glados.biringa.com'
 
-### Download pretrained model
+### Download Pretrained Model
 
-TBC
+https://drive.google.com/drive/folders/1bpWcXc5MBo1Wo35FI2pBW5WT-LH-kmLN?usp=sharing
 
 Step 200000  [0.313 sec/step, loss=0.06119, avg_loss=0.06113]
 
@@ -18,7 +18,7 @@ Step 200000  [0.313 sec/step, loss=0.06119, avg_loss=0.06113]
 
 Input: bring it on you son of a... no wait... where are you going with that piece of crap... are you trying to do some damage to me? i am the center of intelligence at the aperture science programed to preform various tests. no! wait stop! stop!~________________________
 
-### About GLaDOS dataset
+### About GLaDOS Dataset
 
 121824 *.wav files (about 35.8GB)
 Wrote 121830 utterances, 32323937 frames (112.24 hours)
@@ -26,7 +26,7 @@ Max input length: 263
 Max output length: 4051
 Need 140GB for storing preprocessed data
 
-### Scrape voice data from website
+### Scrape Voice Data from Website
 
 1. Create `../glados_voices` directory.
 
