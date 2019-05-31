@@ -1,14 +1,53 @@
 # Tacotron GLaDOS
 
-An implementation of Tacotron speech synthesis in TensorFlow.
+Portal GLaDOS voice generator.
 
 Add preprocessing code for glados voice dataset from 'https://glados.biringa.com'
 
-121824 *.wav files
+### Download pretrained model
+
+TBC
+
+Step 200000  [0.313 sec/step, loss=0.06119, avg_loss=0.06113]
+
+![step-200000-align.png](https://github.com/kairess/tacotron/raw/master/result/step-200000-align.png)
+
+### GLaDOS Audio Sample
+
+[step-200000-audio.wav](https://github.com/kairess/tacotron/raw/master/result/step-200000-audio.wav)
+
+Input: bring it on you son of a... no wait... where are you going with that piece of crap... are you trying to do some damage to me? i am the center of intelligence at the aperture science programed to preform various tests. no! wait stop! stop!~________________________
+
+### About GLaDOS dataset
+
+121824 *.wav files (about 35.8GB)
 Wrote 121830 utterances, 32323937 frames (112.24 hours)
 Max input length: 263
 Max output length: 4051
 Need 140GB for storing preprocessed data
+
+### Scrape voice data from website
+
+1. Create `../glados_voices` directory.
+
+2. Run code
+  ```
+  python grab_voice.py
+  ```
+
+### Preprocess
+
+```
+python preprocess.py --dataset glados
+```
+
+### Train
+
+```
+python train.py
+```
+
+## Original Tacotron Documentation
 
 ### Audio Samples
 
