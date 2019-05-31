@@ -12,6 +12,8 @@ Step 200000  [0.313 sec/step, loss=0.06119, avg_loss=0.06113]
 
 ![step-200000-align.png](https://github.com/kairess/tacotron/raw/master/result/step-200000-align.png)
 
+![loss.png](https://github.com/kairess/tacotron/raw/master/result/loss.png)
+
 ### GLaDOS Audio Sample
 
 [step-200000-audio.wav](https://github.com/kairess/tacotron/raw/master/result/step-200000-audio.wav)
