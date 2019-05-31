@@ -33,6 +33,11 @@ class DataFeeder(threading.Thread):
         if int(sp[2]) >= hparams.outputs_per_step * hparams.max_iters:
           continue
 
+        try:
+          text_to_sequence(sp[3], self._cleaner_names)
+        except:
+          continue
+
         self._metadata.append(sp)
       # self._metadata = [line.strip().split('|') for line in f]
       hours = sum((int(x[2]) for x in self._metadata)) * hparams.frame_shift_ms / (3600 * 1000)
