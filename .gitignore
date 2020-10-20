@@ -4,3 +4,4 @@ __pycache__/
 .DS_Store
 run*.sh
 .vscode
+/.idea/workspace.xml
